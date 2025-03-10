@@ -11,5 +11,14 @@ contract Bytes {
         // ...
         // etc
 
-   }
+        bytes memory retBytesArr = new bytes(z);
+
+        if (z != 0) {
+            for (uint8 i = 0; i < z; i++) {
+                retBytesArr[i] = bytes1(i);
+            }
+        }
+
+        return retBytesArr;
+    }
 }
