@@ -7,5 +7,8 @@ contract IsNBitSet {
         // 000....0001 with n = 0 returns true
         // 000....0001 with n = 1 returns false
         // 000....0010 with n = 1 returns true
+
+        uint256 shiftedN = 1 << n;
+        return (uint256(x) & shiftedN != 0);
     }
 }
