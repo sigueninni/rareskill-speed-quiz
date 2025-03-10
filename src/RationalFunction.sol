@@ -2,7 +2,6 @@
 pragma solidity 0.8.28;
 
 contract RationalFunction {
-
     function f(uint256 x) public pure returns (uint256) {
         // return the function f(x) = 1 / (1 - 1/x) with two decimals rounded down
         // f(0) = revert
@@ -12,6 +11,7 @@ contract RationalFunction {
         // f(4) = 133
         // f(5) = 125
 
-        return x * 100 / (x - 1);
+        if (x == 0 || x == 1) revert();
+        return (100 * x) / (x - 1);
     }
 }

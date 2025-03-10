@@ -17,7 +17,9 @@ contract ViewContract {
 contract ReadStruct {
     function main(address a) public view returns (uint256 x, uint256 y) {
         // read the struct from ViewContract and return the x and y values
-        // do not redeclare the struct in this contract or 
+        // do not redeclare the struct in this contract or
         // reference it in ViewContract
+
+        return (ViewContract(a).s());
     }
 }

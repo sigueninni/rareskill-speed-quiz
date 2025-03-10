@@ -1,3 +1,45 @@
+
+## Week 1
+
+**Monday**
+
+- [ ]  RemoveElement.sol
+- [ ]  StringConcat.sol
+- [ ]  StringCompare.sol
+
+**Tuesday**
+
+- [ ]  MemoryArray.sol
+- [ ]  Bytes.sol
+- [ ]  StringIndex.sol
+
+**Wednesday**
+
+- [ ]  IsFirstBitSet.sol
+- [ ]  IsNBitSet.sol
+- [ ]  ConvertToNegative.sol
+
+**Thursday**
+
+- [ ]  Multiplication.sol
+- [ ]  MultiplyConstant.sol
+
+**Friday**
+
+- [ ]  DivUp.sol
+- [ ]  NinetyNinePercent.sol
+- [ ]  RationalFunction.sol
+
+**Saturday**
+
+- [ ]  TryCatchSimple.sol
+- [ ]  TryCatchReason.sol
+
+**Sunday**
+
+- [ ]  ReadStruct.sol
+- [ ]  **Set up a 15 minute call with your instructor to review your work**
+
 # Solidity Speed Quiz (Intermediate)
 
 The Solidity Speed Quiz is a collection of problems that tests engineers on intermediate-level Solidity syntax. After teaching hundreds of Solidity engineers -- including professional ones -- we've seen that many tend to struggle to produce answers quickly to the kinds of problems in this quiz.
