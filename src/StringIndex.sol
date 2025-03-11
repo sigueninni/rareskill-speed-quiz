@@ -5,7 +5,7 @@ contract StringIndex {
     function main(
         string memory str,
         uint256 index
-    ) public returns (string memory) {
+    ) public pure returns (string memory) {
         // return the character at index in str
         // assume str only consists of ascii characters
 

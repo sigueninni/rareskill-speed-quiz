@@ -2,7 +2,7 @@
 pragma solidity 0.8.28;
 
 contract Bytes {
-    function main(uint8 z) public returns (bytes memory) {
+    function main(uint8 z) public pure returns (bytes memory) {
         // if z = 0, return empty bytes
         // if z = 1, return bytes 0x00
         // if z = 2, return bytes 0x0001
