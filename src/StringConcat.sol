@@ -7,5 +7,6 @@ contract StringConcat {
         string memory b
     ) public pure returns (string memory) {
         return string.concat(a, b);
+        //return string(abi.encodePacked(a, b));
     }
 }

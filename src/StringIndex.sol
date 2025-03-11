@@ -11,10 +11,13 @@ contract StringIndex {
 
         require(index < bytes(str).length, "outside bounds");
 
-        bytes memory convStrBytes = bytes(str);
+        /*        bytes memory convStrBytes = bytes(str);
         bytes memory returnedBytesStr = new bytes(1);
 
         returnedBytesStr[0] = convStrBytes[index];
-        return string(returnedBytesStr);
+        return string(returnedBytesStr); */
+
+        require(index < bytes(str).length, "");
+        return string(abi.encodePacked(bytes(str)[index]));
     }
 }

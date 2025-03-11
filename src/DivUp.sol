@@ -7,11 +7,7 @@ contract DivUp {
         // if y divides x exactly, return x / y
         // if there is a fractional part in the quotient, add 1 to the answer
         // if y == 0 revert
-        if (y == 0) revert("division by zero!");
-        if (x % y == 0) {
-            return x / y;
-        } else {
-            return (x / y + 1);
-        }
+        if (y == 0) revert();
+        return (x % y == 0 ? x / y : x / y + 1);
     }
 }
