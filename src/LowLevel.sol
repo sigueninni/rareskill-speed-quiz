@@ -8,7 +8,20 @@ contract LowLevel {
         // return true if the call succeeded
         // return false if the call failed
 
-        // bonus challenge: use an interface and a high level call to accomplish the same task
-
+        (bool callSuccess, ) = a.call(abi.encodeWithSignature("foo()"));
+        return callSuccess;
     }
+
+    // bonus challenge: use an interface and a high level call to accomplish the same task
+    function callByInterface(address a) public returns (bool) {
+        try Foo(a).foo() {
+            return true;
+        } catch {
+            return false;
+        }
+    }
+}
+
+interface Foo {
+    function foo() external;
 }
