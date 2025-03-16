@@ -8,6 +8,7 @@ contract SelfCall {
         // call me() on this contract
         // think outside the box! You can only write code here, no creating external contracts
         // or modifying other parts of this contract
+        (bool ok, ) = address(this).call(abi.encodeWithSignature("me()"));
     }
 
     function me() external {
