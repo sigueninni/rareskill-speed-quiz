@@ -15,18 +15,13 @@ contract AccountMakerTest is Test {
         bytes32 ownerB32 = bytes32(bytes20(uint160(owner)));
         address predictedAddress = address(
             uint160(
-                uint(
+                uint256(
                     keccak256(
                         abi.encodePacked(
                             bytes1(0xff),
                             address(accountMaker),
                             ownerB32,
-                            keccak256(
-                                abi.encodePacked(
-                                    type(Account2).creationCode,
-                                    abi.encode(owner)
-                                )
-                            )
+                            keccak256(abi.encodePacked(type(Account2).creationCode, abi.encode(owner)))
                         )
                     )
                 )

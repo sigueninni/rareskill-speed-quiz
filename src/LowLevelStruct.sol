@@ -5,7 +5,7 @@ contract LowLevelStruct {
     function main(address a) public returns (uint256 x, uint256 y) {
         // call function "point()" on address a
         // do not use an interface
-        // point() returns a struct with two uint256 fields, i.e. 
+        // point() returns a struct with two uint256 fields, i.e.
         // struct Point {
         //     uint256 x;
         //     uint256 y;
@@ -15,4 +15,4 @@ contract LowLevelStruct {
 
         // bonus challenge: use an interface and a high level call to accomplish the same task
     }
-}   
+}

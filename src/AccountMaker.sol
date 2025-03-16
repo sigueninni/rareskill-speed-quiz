@@ -10,7 +10,7 @@ contract Account2 {
 
     function withdraw() external {
         require(msg.sender == owner, "Not owner");
-        (bool ok, ) = owner.call{value: address(this).balance}("");
+        (bool ok,) = owner.call{value: address(this).balance}("");
         require(ok);
     }
 }
@@ -34,12 +34,7 @@ contract AccountMaker {
                             bytes1(0xff),
                             address(this),
                             bytes32(bytes20(uint160(owner))),
-                            keccak256(
-                                abi.encodePacked(
-                                    type(Account2).creationCode,
-                                    abi.encode(owner)
-                                )
-                            )
+                            keccak256(abi.encodePacked(type(Account2).creationCode, abi.encode(owner)))
                         )
                     )
                 )
@@ -47,7 +42,7 @@ contract AccountMaker {
         );
 
         //send msg.value
-        (bool success, ) = create2Addr.call{value: msg.value}("");
+        (bool success,) = create2Addr.call{value: msg.value}("");
         if (!success) {
             revert();
         }

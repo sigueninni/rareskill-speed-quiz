@@ -6,6 +6,7 @@ import "forge-std/console.sol";
 
 contract BadBank {
     using Address for address;
+
     mapping(address => uint256) public balances;
 
     function deposit() public payable {
