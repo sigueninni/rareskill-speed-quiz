@@ -9,7 +9,7 @@ contract NinetyNinePercent {
         // example: x = 4499, y = 4545 return false
         // example: x = 32999999999, y = 33333333333 return false
         //i understood to check if x = 0.99 of y !  == 100 x = 99y
-        //return ( x*99 == y*100);
+        //return ( x*99 >= y*100);
         require(y > 0);
         return (((x * 100) / y) == 99);
     }

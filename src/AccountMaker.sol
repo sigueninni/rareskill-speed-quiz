@@ -25,33 +25,11 @@ contract AccountMaker {
         //      hash(0xFF, sender, salt, bytecode)
         //      bytes32 hashAdress = keccak256( abi.encodePacked(bytes1(0xff), msg.sender, owner, owner.code)
 
-        //NOT_CLEAR_FOR_ME the requirment!
-        address create2Addr = address(
-            uint160(
-                uint256(
-                    keccak256(
-                        abi.encodePacked(
-                            bytes1(0xff),
-                            address(this),
-                            bytes32(bytes20(uint160(owner))),
-                            keccak256(
-                                abi.encodePacked(
-                                    type(Account2).creationCode,
-                                    abi.encode(owner)
-                                )
-                            )
-                        )
-                    )
-                )
-            )
+        bytes32 salt;
+        salt = bytes32(bytes20(owner));
+        address add = address(
+            new Account2{salt: salt, value: msg.value}(owner)
         );
-
-        //send msg.value
-        (bool success, ) = create2Addr.call{value: msg.value}("");
-        if (!success) {
-            revert();
-        }
-
-        return create2Addr;
+        return add;
     }
 }
